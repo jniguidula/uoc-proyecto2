@@ -242,3 +242,34 @@ Este gráfico de coeficientes de la regresión Ridge te ayuda a comprender cómo
 
 *   Las características con mayor importancia en el modelo Ridge (como PLU 4770 y PLU 4046) se alinean bien con las tendencias observadas en el análisis de cohortes.
 *   Los PLU influyen en la variable objetivo de manera diferente según sus dinámicas de mercado (por ejemplo, mayor oferta = precios más bajos para PLU 4046).
+
+**Seleccionar los mejores modelos mediante validación cruzada con k-fold, para asegurar la robustez y generalización de los modelos creados**
+
+**Definir los modelos**: Ridge, Lasso y ElasticNet como modelos base.
+
+**Configurar la validación cruzada**:
+
+*   Seleccionaremos un valor de `k` para el k-fold (comúnmente k=5 o k=10).
+*   Utilizaremos `cross_val_score` o `GridSearchCV` para obtener la métrica de evaluación (RMSE o R^2).
+
+**Optimizar los hiperparámetros**: Realizaremos una búsqueda de los mejores hiperparámetros mediante `GridSearchCV`.
+
+**Seleccionar el mejor modelo**: Compararemos las métricas obtenidas (promedios de validación cruzada) y seleccionaremos el modelo con el mejor rendimiento
+
+**Salida**
+
+```
+Modelo: Ridge
+Mejores Hiperparámetros: {'alpha': 100}
+RMSE Promedio de CV: 0.1495
+
+Modelo: Lasso
+Mejores Hiperparámetros: {'alpha': 0.01}
+RMSE Promedio de CV: 0.1497
+
+Modelo: ElasticNet
+Mejores Hiperparámetros: {'alpha': 0.01, 'l1_ratio': 0.1}
+RMSE Promedio de CV: 0.1496
+
+RMSE en Test del Mejor Modelo: 0.3846
+```
