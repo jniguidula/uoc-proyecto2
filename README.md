@@ -110,6 +110,17 @@ region_classification = {
 
 ![diff](./files/diff-regions.png)
 
+*   el dataset actualizado tiene 53.415 filas versus los 18.250 del proyecto 1.
+*   para verificar que los datos originales no difieren con los datos actualizados hasta la fecha final del proyecto 1:
+
+1.  contamos las filas del csv actualizado hasta la ultima fecha del proyecto 1 que era del 2018-03-25: 18.360 filas, puesto que habia unos regionas nuevos.
+2.  comparamos la evolución del 'AveragePrice' y vemos que el gráfico sigue el mismo patron.
+
+![Average Price 1](./files/average-price1.png)
+
+![Average Price 2](./files/average-price2.png)
+
+
 **Modelos Predictivos**:
 
 *   Los modelos de regresión regularizados y clasificación deben estar bien optimizados.
