@@ -196,8 +196,7 @@ Las tendencias posteriores a 2020 podrían reflejar los efectos de la pandemia e
 
 **Aplicando Ridge Regression**
 
-  
-![Ridge Regression](./files/ridge-regresion.png)
+![Ridge Regression](./files/ridge-regression.png)
 
 Este gráfico de coeficientes de la regresión Ridge te ayuda a comprender cómo cada característica (tipos de PLU y volúmenes) influye en la variable objetivo predicha (probablemente el precio promedio de los aguacates u otra métrica relacionada). Así se conecta con tu análisis:
 
