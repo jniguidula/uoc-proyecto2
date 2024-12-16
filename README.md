@@ -20,7 +20,7 @@ Opción de continuar y ampliar el **"proyecto-1-regresion"**.
 
 ![GitHub Project](./files/Github-project.png)
 
-*   Para ampliar la CSV del proyecto 1, utilizamos un dataset de kaggle.com con información de Hass Avocados de 2015 hasta 2023 para ampliar el  proyecto-1
+*   Para ampliar los datos del CSV del proyecto 1, utilizamos un dataset de kaggle.com con información de Hass Avocados de 2015 hasta 2023 para ampliar el  proyecto-1
     *   [https://www.kaggle.com/datasets/vakhariapujan/avocado-prices-and-sales-volume-2015-2023](https://www.kaggle.com/datasets/vakhariapujan/avocado-prices-and-sales-volume-2015-2023)
 
 ## Objetivos del proyecto
@@ -37,9 +37,9 @@ Opción de continuar y ampliar el **"proyecto-1-regresion"**.
 ![dataframe](./files/avocado-dataframe.png)
 
 *   faltaba la columna 'year' y procedimos a crear la nueva columna.
-*   regularizamos la columna 'Date' para poder tratarlo en python.
+*   regularizamos la columna 'Date' para poder tratarla en python.
 *   creamos la nueva columna region\_type para agrupar clasificaciones segun el tipo de region: City, Region, GreaterRegion y TotalUS, siendo Greater Region una clasificación de regiones que suman al Total Volume.
-*   Tenemos nuevos valores en 'region' y hemos actualizado la clasificación de 'region\_type' para incluir los nuevo regions:
+*   Tenemos nuevos valores en 'region' y hemos actualizado la clasificación de 'region\_type' para incluir los nuevos regions:
 
 ```
 region_classification = {
@@ -106,12 +106,12 @@ region_classification = {
 }
 ```
 
-*   la diferencia de tener mas regiones con los datos actualizados
+*   las diferencias mediante 'diff', se ve los nuevos regiones con los datos actualizados del CSV 2015-2023.
 
 ![diff](./files/diff-regions.png)
 
 *   el dataset actualizado tiene 53.415 filas versus los 18.250 filas del proyecto 1.
-*   para verificar que los datos originales no difieren con los datos actualizados hasta la fecha final del proyecto 1:
+*   para verificar que los datos originales no difieren significativamente con los datos actualizados hasta la fecha final del proyecto 1:
 
 1.   contamos las filas del csv actualizado hasta la ultima fecha del proyecto 1 que era del 2018-03-25: 18.360 filas, puesto que habia unos regionas nuevos.
 2.   comparamos la evolución del 'AveragePrice' y vemos que el gráfico sigue el mismo patron. (Hicimos e mismo ejercicio con Total Volume).
@@ -124,7 +124,7 @@ region_classification = {
 
 ![Average Price 2](./files/average-price2.png)
 
-*   Precio Medio por año - observamos los **outliers** en el año 2017, como consequencia de varios anomalies que ocurió (sequía, tarifas en las importacioes, etc) pero lo que podemos observar es la diferencia en los precios entre avocados organicos versus convencionales, siendo los avocados convencionales con menor precio de forma consistente.
+*   Precio Medio por año - observamos los **outliers** en el año 2017, como consequencia de varios anomalias, ya expuestos en proyecto1, que ocurió (sequía, tarifas en las importacioes, etc) pero lo que podemos observar es la diferencia en los precios entre avocados organicos versus convencionales, siendo los avocados convencionales con menor precio de forma consistente.
 
 ![Precio Medio](./files/precio-medio.png)
 
