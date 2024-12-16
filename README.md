@@ -131,27 +131,27 @@ region_classification = {
 **Heatmap**
 
 *   Presentamos el Heatmap contra AveragePrice y vemos la correlación negativa con Total Volume
-*   Tambien observamos alta correlación entre el avocado plu4046 as Total Volume.
+*   Tambien observamos una alta correlación entre el avocado plu4046 as Total Volume.
 
 ![Heatmap AvgPrice](./files/heatmap-averageprice.png)
 
 **Violin Plot**
 
-*   Aqui mostramos el violin plot de Total Volume por Greater Region, y seguimos con el patrón de California y West con mas volumen de consumo.
+*   Aqui mostramos el violin plot de Total Volume por Greater Region, y seguimos con el patrón de California y West con más volumen de consumo.
 
 ![ViolinPlot TotalVolume](./files/violinplot-totalvolume.png)
 
-*   evolución del Average Price, vemos los outliers durante los añps 2016-2017, ya presentado en proyecto-1
+*   evolución del Average Price, vemos los outliers durante los años 2016-2017, ya presentado en proyecto-1
 
 ![Boxplot Average Price](./files/boxplot-averageprice.png)
 
-**Detección de Anomalias en los datos**
+**Detección de Anomalías en los datos**
 
-*   Detectamos ausencia de datos de las ventas por bolsas:
+*   Detectamos ausencia de datos de las ventas por bolsas entre los años 2018 a 2021:
 
 ![Ventas por Bolsas](./files/SLXLbags.png)
 
-*   En consecuencia, decidimos concentrar en los volumenes por códigos de productos PLU para el estudio de cohortes y regresión
+*   En consecuencia, decidimos descartar hacer análisis con volumenes por tamaño de bolsa y solo concentrar en los volumenes por códigos de productos PLU para el estudio de cohortes y regresión
 
 **Modelos de Regresion y Cohortes de soporte**:
 
@@ -198,23 +198,25 @@ Las tendencias posteriores a 2020 podrían reflejar los efectos de la pandemia e
 
 ![Ridge Regression](./files/ridge-regression.png)
 
-Este gráfico de coeficientes de la regresión Ridge te ayuda a comprender cómo cada característica (tipos de PLU y volúmenes) influye en la variable objetivo predicha (probablemente el precio promedio de los aguacates u otra métrica relacionada). Así se conecta con tu análisis:
+Este gráfico de coeficientes de la regresión Ridge nos ayuda a comprender cómo cada característica (tipos de PLU y volúmenes) influye en la variable objetivo, el precio promedio de los aguacates:
+
+---
 
 **Observaciones Clave:**
 
 **PLU 4770 (Influencia Positiva):**
 
-*   El coeficiente positivo más grande sugiere que un aumento en los volúmenes de PLU 4770 está fuertemente asociado con un aumento en la variable objetivo.
-*   Aunque PLU 4770 mostró un menor volumen total de ventas en tu análisis de cohortes anterior, su efecto en la regresión es sustancial. Esto podría indicar que los aguacates bajo este PLU tienen precios más altos o ejercen una influencia única en el mercado.
+*   El coeficiente positivo más grande sugiere que un aumento en los volúmenes de PLU 4770 está fuertemente asociado con un aumento en el precio promedio del avocado.
+*   Aunque PLU 4770 mostró un menor volumen total de ventas en el análisis de cohortes anterior, su efecto en la regresión es sustancial. Esto podría indicar que los aguacates bajo este PLU tienen precios más altos o ejercen una influencia única en el mercado.
 
 **PLU 4046 (Influencia Negativa):**
 
-*   Un coeficiente negativo significativo para PLU 4046 sugiere que los aumentos en el volumen de este PLU conducen a una disminución en la variable objetivo predicha.
+*   Un coeficiente negativo significativo para PLU 4046 sugiere que los aumentos en el volumen de este PLU es el reultado de una bajada del precio promedio del avocado.
 *   Esto se alinea con el análisis de cohortes anterior, donde PLU 4046 presentó volúmenes de ventas más altos, lo que podría indicar precios más bajos (una tendencia común cuando la oferta es alta).
 
 **Volumen Total (Ligeramente Negativo):**
 
-*   El coeficiente negativo pequeño implica que el volumen total de ventas de aguacates tiene un efecto marginalmente a la baja en la variable objetivo. Esto se alinea con la economía de oferta y demanda: una mayor oferta podría reducir los precios.
+*   El coeficiente negativo pequeño implica que el volumen total de ventas de aguacates tiene un efecto marginalmente a la baja con el preci pro,edio. Esto se alinea con la economía de oferta y demanda: una mayor oferta podría reducir los precios.
 
 **PLU 4225 y Bolsas Totales (Influencia Positiva):**
 
@@ -240,7 +242,7 @@ Este gráfico de coeficientes de la regresión Ridge te ayuda a comprender cómo
 **Perspectivas Generales:**
 
 *   Las características con mayor importancia en el modelo Ridge (como PLU 4770 y PLU 4046) se alinean bien con las tendencias observadas en el análisis de cohortes.
-*   Los PLU influyen en la variable objetivo de manera diferente según sus dinámicas de mercado (por ejemplo, mayor oferta = precios más bajos para PLU 4046).
+*   Los PLU influyen en el precio de manera diferente según sus dinámicas de mercado como p.e., mayor oferta = precios más bajos para PLU 4046.
 
 **Seleccionar los mejores modelos mediante validación cruzada con k-fold, para asegurar la robustez y generalización de los modelos creados**
 
