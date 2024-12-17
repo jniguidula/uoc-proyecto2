@@ -27,8 +27,8 @@ Opción de continuar y ampliar el **"proyecto-1-regresion"**.
 
 1.  Ampliar la exploración y analisis de datos el proyecto-1 con datos actualizados hasta diciembre 2023.
 2.  Verificar continuidad de la evolución de precios y volumenes con el proyecto-1
-3.  Implementar modelos de regresión regularizados (como Ridge, Lasso, ElasticNet), utilizando técnicas de búsqueda de hiperparámetros para optimizar el rendimiento del modelo.
-4.  Presentar los resultados de la validación cruzada (k-fold) y realizar un análisis de los residuos.
+3.  Analizar el comportamiento de ventas de los diferentes PLUs de avocado en relación a los cambios de precios durante el periodo en estudio.
+4.  Establecer relaciones con datos variables externos adicionales al comportamiento del volumen de avocados y/o datos economicos  a los precios de avocados.
 
 **Informe del Análisis Exploratorio de Datos (EDA) y Calidad de los Datos**:
 
@@ -274,3 +274,17 @@ RMSE Promedio de CV: 0.1496
 
 RMSE en Test del Mejor Modelo: 0.3846
 ```
+
+---
+
+_**Uso de fuentes externos para establecer relaciones entre tiempo y Total Volume de avocados y tipo de interes con los precios.**_
+
+*   web scrapping de openweathermap.org para establecer relacion con los volumenes. Lamentablemente, da error HTTP 401.
+
+![Openweather](./files/weather-scrapping.png)
+
+*   registro de usuario para poder extraer información de tipos de interés y relacionarlo con los precios de avocado  - lamentablemente, requiere cuenta de pago para poder extraer información. Google devuelve HTTP 429.
+
+![Google Trends](./files/google-pytrends.png)
+
+---
